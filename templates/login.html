@@ -22,13 +22,13 @@
 						<!-- /Account Logo -->
 						<div class="account-wrapper">
 							<div class="account-logo">
-								<a href="index.php"><img src="/london-academy/assets/img/logo.png" width="170" height="105" alt="Company Logo"></a>								
+								<a href="index.php"><img src="{% static 'img/logo.png' %}" width="170" height="105" alt="Company Logo"></a>								
 							</div>
 							<h3 class="account-title">Login Administrateur </h3>
 							<!-- Account Form -->
 							<form method="POST" enctype="multipart/form-data">
                                 {% csrf_token %}
-                                
+
 								<div class="form-group">
 									<label>Nom d'utilisateur</label>
                                     {{ form.username }}
