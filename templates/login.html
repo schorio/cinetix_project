@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+		<title>Login - CineTix Admin</title>
+		
+		{% include 'base/header.html' %}
+	</head>
+	<body class="account-page">
+	
+		<!-- Main Wrapper -->
+		<div class="main-wrapper">
+			<div class="account-content">
+				<div class="container">
+					
+					
+					<div class="account-box">
+						<!-- Account Logo -->
+						
+						<!-- /Account Logo -->
+						<div class="account-wrapper">
+							<div class="account-logo">
+								<a href="index.php"><img src="/london-academy/assets/img/logo.png" width="170" height="105" alt="Company Logo"></a>								
+							</div>
+							<h3 class="account-title">Login Administrateur </h3>
+							<!-- Account Form -->
+							<form method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                
+								<div class="form-group">
+									<label>Nom d'utilisateur</label>
+                                    {{ form.username }}
+								</div>
+
+								<div class="form-group">
+									<div class="row">
+										<div class="col">
+											<label>Mot de passe</label>
+										</div>
+									</div>
+                                    {{ form.password }}
+								</div>
+								
+								<div class="form-group text-center">
+									<button class="btn btn-primary account-btn" name="login" type="submit">Login</button>
+								</div>
+							</form>
+							<!-- /Account Form -->
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Main Wrapper -->
+		
+		{% include 'base/js.html' %}		
+	</body>
+</html>
