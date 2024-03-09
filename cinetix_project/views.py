@@ -1,21 +1,20 @@
 from django.shortcuts import render, redirect
-from django.contrib import messages 
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth.forms import AuthenticationForm
+from .forms import LoginForm
 
 def login_page(request):
+    forms = LoginForm()
     if request.method == 'POST':
-        username = request.POST['username']
-        password = request.POST['password']
-        
-        ut = authenticate(request, username=username, password=password)
-        
-        if ut is not None:
-            login(request, ut)
-            return redirect("mangalib:index")
-        else:
-            messages.info(request, "Misy diso")
-            
-    form = AuthenticationForm()
-    return render(request, "login.html", {'form': form})
+        forms = LoginForm(request.POST)
+        if forms.is_valid():
+            username = forms.cleaned_data['username']
+            password = forms.cleaned_data['password']
+            user = authenticate(username=username, password=password)
+            if user:
+                login(request, user)
+                return redirect('login')
+    context = {
+        'form': forms
+    }
+    return render(request, 'login.html', context)
