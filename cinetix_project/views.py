@@ -3,6 +3,15 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from .forms import LoginForm
 
+
+@login_required(login_url='login')
+def test_page(request):
+    context = {
+        'test': 'test',
+    }
+    return render(request, 'test.html', context)
+
+
 def login_page(request):
     forms = LoginForm()
     if request.method == 'POST':
@@ -13,7 +22,7 @@ def login_page(request):
             user = authenticate(username=username, password=password)
             if user:
                 login(request, user)
-                return redirect('login')
+                return redirect('test')
     context = {
         'form': forms
     }
