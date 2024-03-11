@@ -1,6 +1,7 @@
 {% extends 'base/base.html' %}
-{% block title %}Film{% endblock title %}
-{% block breadcrumb %}Liste des films{% endblock breadcrumb %}
+{% block title_1 %} Film {% endblock title_1 %}
+{% block title_2 %} Film {% endblock title_2 %}
+{% block title_3 %} Liste des films {% endblock title_3 %}
 
 
 {% block content %}
@@ -20,6 +21,7 @@
                     <!-- </tr> -->
                 </thead>
                 <tbody>
+                {% csrf_token %}
                 {% for film in films %}
                     <tr>
                         <td>
