@@ -24,4 +24,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('test/', test_page, name='test'),
     path('', login_page, name='login'),
+    path('cinetix/', login_page, name='cinetix.urls'),
 ]
