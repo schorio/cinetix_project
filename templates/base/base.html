@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+        <title>{% block title %} {% endblock title %}</title>
+		{% include 'base/header.html' %}
+    </head>
+    <body>
+		<!-- Main Wrapper -->
+        <div class="main-wrapper">
+		
+			<!-- Navbar -->
+            {% include 'base/navbar.html' %}
+            <!-- /.navbar -->
+
+            <!-- Main Sidebar Container -->
+            {% include 'base/sidebar.html' %}
+			
+			<!-- Page Wrapper -->
+            <div class="page-wrapper">
+			
+				<!-- Page Content -->
+                <div class="content container-fluid">
+				
+					<!-- Page Header -->
+					<div class="page-header">
+						<div class="row align-items-center">
+							<div class="col">
+								<h3 class="page-title">{% block title %} {% endblock title %}</h3>
+								<ul class="breadcrumb">
+								<li class="breadcrumb-item">Listes</li>
+									<li class="breadcrumb-item active"><a href="">{% block extrahead %} {% endblock extrahead %}</a></li>
+								</ul>
+							</div>
+								<div class="col-auto float-right ml-auto">
+									<a href="#" class="btn add-btn" data-toggle="modal" data-target="#"><i class="fa fa-plus"></i> Ajouter un categorie</a>
+								</div>
+						</div>
+					</div>
+					<!-- /Page Header -->
+
+					<!-- Search Filter -->
+					<div class="row filter-row">
+						<div class="col-sm-6 col-md-8">  
+							<div class="form-group form-focus">
+								<input type="text" name="search_1" id="search_1" class="form-control floating">
+								<label class="focus-label">Entrer les mots clés</label>
+							</div>
+						</div>
+                    </div>
+					<!-- Search Filter -->
+					
+					{% block content %}
+
+                    {% endblock content %}
+
+                </div>
+				<!-- /Page Content -->
+				
+            </div>
+			<!-- /Page Wrapper -->
+
+        </div>
+		<!-- /Main Wrapper -->
+		
+		{% include 'base/js.html' %}
+
+        {% block extrascript %}
+
+        {% endblock extrascript %}
+    </body>
+</html>
