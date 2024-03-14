@@ -3,6 +3,11 @@
 {% block title_2 %} Film {% endblock title_2 %}
 {% block title_3 %} Liste des films {% endblock title_3 %}
 
+{% block boutton_create %}
+<div class="col-auto float-right ml-auto">
+    <a href="#" class="btn add-btn" data-toggle="modal" data-target="#film_create"><i class="fa fa-plus"></i> Film </a>
+</div>
+{% endblock boutton_create %}
 
 {% block content %}
 <div class="row">
@@ -53,6 +58,11 @@
     </div>
 </div>
 {% endblock content %}
+
+
+{% block modal_create %}
+    {% include 'cinetix/film/film_create.html' %}
+{% endblock modal_create %}
 
 
 {% block extrascript %}

@@ -34,9 +34,9 @@
 									<li class="breadcrumb-item active"><a href="">{% block title_3 %} {% endblock title_3 %}</a></li>
 								</ul>
 							</div>
-								<div class="col-auto float-right ml-auto">
-									<a href="#" class="btn add-btn" data-toggle="modal" data-target="#"><i class="fa fa-plus"></i> Ajouter un categorie</a>
-								</div>
+							{% block boutton_create %}
+
+                    		{% endblock boutton_create %}
 						</div>
 					</div>
 					<!-- /Page Header -->
@@ -58,6 +58,10 @@
 
                 </div>
 				<!-- /Page Content -->
+
+				{% block modal_create %}
+
+				{% endblock modal_create %}
 				
             </div>
 			<!-- /Page Wrapper -->
