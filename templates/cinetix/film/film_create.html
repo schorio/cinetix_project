@@ -1,0 +1,71 @@
+<div id="film_create" class="modal custom-modal fade" role="dialog">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Nouveau film</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form method="POST" id="film_create" name="film_create" enctype="multipart/form-data">
+                    {% csrf_token %}
+					<div class="row">
+						<div class="col-sm-9">
+							<div class="form-group">
+								<label for="titre">Titre : </label>
+								<input type="text" class="form-control" id="titre" name="titre" autofocus>
+							</div>
+						</div>
+                        <div class="col-sm-3">
+							<div class="form-group">
+								<label for="evaluation">Evaluation : </label>
+								<input type="number" class="form-control" id="evaluation" name="evaluation" autofocus>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="genres">Genres : </label>
+								<input type="text" class="form-control" id="genres" name="genres" autofocus>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="acteur">Acteur :</label>
+								<input type="text" class="form-control" id="i_acteur" name="acteur" value="0" autofocus>
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="synopsis">Synopsis : </label>
+								<input type="text" class="form-control" id="i_synopsis" name="synopsis" value="0" autofocus>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="trailer">Trailer : </label>
+								<input type="text" class="form-control" id="i_trailer" name="trailer" value="0" autofocus>
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="posteur">Posteur : </label>
+								<input type="text" class="form-control" id="posteur" name="posteur" autofocus>
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="commentaires">commentaires : </label>
+								<input type="text" class="form-control" id="i_commentaires" name="commentaires" autofocus>
+							</div>
+						</div>
+					</div>
+				
+					<div class="submit-section">
+						<button type="submit" class="btn btn-primary submit-btn">Valider</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
