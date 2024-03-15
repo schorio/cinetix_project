@@ -8,55 +8,55 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form method="POST" id="film_create" name="film_create" enctype="multipart/form-data">
+				<form method="POST">
                     {% csrf_token %}
 					<div class="row">
 						<div class="col-sm-9">
 							<div class="form-group">
 								<label for="titre">Titre : </label>
-								<input type="text" class="form-control" id="titre" name="titre" autofocus>
+								<input type="text" class="form-control" name="titre">
 							</div>
 						</div>
                         <div class="col-sm-3">
 							<div class="form-group">
 								<label for="evaluation">Evaluation : </label>
-								<input type="number" class="form-control" id="evaluation" name="evaluation" autofocus>
+								<input type="number" class="form-control" name="evaluation">
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
 								<label for="genres">Genres : </label>
-								<input type="text" class="form-control" id="genres" name="genres" autofocus>
+								<input type="text" class="form-control" name="genres">
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
 								<label for="acteur">Acteur :</label>
-								<input type="text" class="form-control" id="i_acteur" name="acteur" value="0" autofocus>
+								<input type="text" class="form-control" name="acteur" value="0">
 							</div>
 						</div>
 						<div class="col-sm-12">
 							<div class="form-group">
 								<label for="synopsis">Synopsis : </label>
-								<input type="text" class="form-control" id="i_synopsis" name="synopsis" value="0" autofocus>
+								<input type="text" class="form-control" name="synopsis">
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
 								<label for="trailer">Trailer : </label>
-								<input type="text" class="form-control" id="i_trailer" name="trailer" value="0" autofocus>
+								<input type="text" class="form-control" name="trailer">
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
 								<label for="posteur">Posteur : </label>
-								<input type="text" class="form-control" id="posteur" name="posteur" autofocus>
+								<input type="text" class="form-control" name="posteur">
 							</div>
 						</div>
 						<div class="col-sm-12">
 							<div class="form-group">
 								<label for="commentaires">commentaires : </label>
-								<input type="text" class="form-control" id="i_commentaires" name="commentaires" autofocus>
+								<input type="text" class="form-control" name="commentaires">
 							</div>
 						</div>
 					</div>
