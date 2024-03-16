@@ -8,7 +8,7 @@
 				</button>
 			</div>
 			<div class="modal-body">
-				<form method="POST">
+				<form action="{% url 'cinetix:film-create' %}" method="POST">
                     {% csrf_token %}
 					<div class="row">
 						<div class="col-sm-9">
