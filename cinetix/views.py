@@ -1,5 +1,6 @@
 from django.views.generic import (
     ListView,
+    CreateView
 )
 
 from django.urls import reverse_lazy
@@ -16,3 +17,10 @@ class FilmListView(LoginRequiredMixin, ListView):
     model = Film
     template_name = 'cinetix/film/film_list.html'
     context_object_name = 'films'
+
+
+class FilmCreateView(LoginRequiredMixin, CreateView):
+    login_url = 'login'
+    model = Film
+    fields = ['titre', 'evaluation', 'genres', 'acteur', 'synopsis', 'trailer', 'posteur', 'commentaires']
+    success_url = reverse_lazy('cinetix:film-list')
