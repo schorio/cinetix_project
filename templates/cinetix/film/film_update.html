@@ -1,0 +1,71 @@
+<div id="film_update_{{ film.pk }}" class="modal custom-modal fade" role="dialog">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Nouveau film</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form action="{% url 'cinetix:film-update' film.pk %}" method="POST">
+                    {% csrf_token %}
+					<div class="row">
+						<div class="col-sm-9">
+							<div class="form-group">
+								<label for="titre">Titre : </label>
+								<input type="text" class="form-control" name="titre" value="{{ film.titre }}">
+							</div>
+						</div>
+                        <div class="col-sm-3">
+							<div class="form-group">
+								<label for="evaluation">Evaluation : </label>
+								<input type="number" class="form-control" name="evaluation" value="{{ film.evaluation }}">
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="genres">Genres : </label>
+								<input type="text" class="form-control" name="genres" value="{{ film.genres }}">
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="acteur">Acteur :</label>
+								<input type="text" class="form-control" name="acteur" value="{{ film.acteur }}">
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="synopsis">Synopsis : </label>
+								<input type="text" class="form-control" name="synopsis" value="{{ film.synopsis }}">
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="trailer">Trailer : </label>
+								<input type="text" class="form-control" name="trailer" value="{{ film.trailer }}">
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="posteur">Posteur : </label>
+								<input type="text" class="form-control" name="posteur" value="{{ film.posteur }}">
+							</div>
+						</div>
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="commentaires">commentaires : </label>
+								<input type="text" class="form-control" name="commentaires" value="{{ film.commentaires }}">
+							</div>
+						</div>
+					</div>
+				
+					<div class="submit-section">
+						<button type="submit" class="btn btn-primary submit-btn">Valider</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
