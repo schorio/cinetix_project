@@ -1,7 +1,8 @@
 from django.views.generic import (
     ListView,
     CreateView,
-    UpdateView
+    UpdateView,
+    DeleteView
 )
 
 from django.urls import reverse_lazy
@@ -31,4 +32,10 @@ class FilmUpdateView(LoginRequiredMixin, UpdateView):
     login_url = 'login'
     model = Film
     fields = ['titre', 'evaluation', 'genres', 'acteur', 'synopsis', 'trailer', 'posteur', 'commentaires']
+    success_url = reverse_lazy('cinetix:film-list')
+
+
+class FilmDeleteView(LoginRequiredMixin, DeleteView):
+    login_url = 'login'
+    model =  Film
     success_url = reverse_lazy('cinetix:film-list')
