@@ -5,7 +5,7 @@
 
 {% block boutton_create %}
 <div class="col-auto float-right ml-auto">
-    <a href="#" class="btn add-btn" data-toggle="modal" data-target="#film_create"><i class="fa fa-plus"></i> Film </a>
+    <a href="" class="btn add-btn" data-toggle="modal" data-target="#film_create"><i class="fa fa-plus"></i> Film </a>
 </div>
 {% endblock boutton_create %}
 
@@ -22,6 +22,7 @@
                     <th>Acteurs</th>
                     <th>Trailer</th>
                     <th>Commentaires</th>
+                    <th>synopsis</th>
                     <th class="text-right no-sort">Action</th>
                     <!-- </tr> -->
                 </thead>
@@ -39,16 +40,19 @@
                         <td>{{ film.acteur }}</td>
                         <td>{{ film.trailer }}</td>
                         <td>{{ film.commentaires }}</td>
+                        <td>{{ film.synopsis }}</td>
                         <td class="text-right">
                             <div class="dropdown dropdown-action">
                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                 <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target=""><i class="fa fa-trash-o m-r-5"></i> Modifier</a>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#film_update_{{ film.pk }}"><i class="fa fa-trash-o m-r-5"></i> Modifier</a>
                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target=""><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
                                 </div>
                             </div>
                         </td>
                     </tr>
+
+                    {% include 'cinetix/film/film_update.html' %}
                         
                 {% endfor %}	
                 </tbody>
