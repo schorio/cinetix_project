@@ -46,13 +46,14 @@
                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
                                 <div class="dropdown-menu dropdown-menu-right">
                                     <a class="dropdown-item" href="#" data-toggle="modal" data-target="#film_update_{{ film.pk }}"><i class="fa fa-trash-o m-r-5"></i> Modifier</a>
-                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target=""><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
+                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#film_delete_{{ film.pk }}"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
                                 </div>
                             </div>
                         </td>
                     </tr>
 
                     {% include 'cinetix/film/film_update.html' %}
+                    {% include 'cinetix/film/film_delete.html' %}
                         
                 {% endfor %}	
                 </tbody>
