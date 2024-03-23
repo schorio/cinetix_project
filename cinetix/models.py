@@ -8,7 +8,7 @@ class Film(models.Model):
     synopsis = models.CharField(max_length=255)
     evaluation = models.FloatField()
     trailer = models.CharField(max_length=255)
-    posteur = models.CharField(max_length=255)
+    posteur = models.ImageField(upload_to='/static/img/film/')
     commentaires = models.CharField(max_length=255)
     
     def __str__(self):
