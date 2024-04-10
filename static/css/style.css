@@ -2100,6 +2100,11 @@ table.dataTable thead > tr > td.sorting {
 	margin-top: 20px;
 }
 
+.details a {
+	color: #007b6f;
+	margin-right: 10px;
+}
+
 /* .voir img {
     border-radius: 20%;
     height: 100%;
