@@ -2080,19 +2080,18 @@ table.dataTable thead > tr > td.sorting {
 }
 
 .image-container {
-	border-radius: 13%;
+	border-radius: 20px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 300px; /* ou toute autre largeur souhaitée */
-	height: 290px; /* ou toute autre hauteur souhaitée */
+	width: 280px; /* ou toute autre largeur souhaitée */
+	height: 370px; /* ou toute autre hauteur souhaitée */
 	overflow: hidden;
-	margin-left: 10px;
-	margin-right: 20px;
+	margin: 0 30px 30px 40px;
   }
   
   .image-container img {
-	max-height: 100%;
+	max-width: 100%;
 	display: block;
 	margin: auto;
   }
@@ -7192,8 +7191,10 @@ ul.comment-list li ul.children {
 	margin-bottom: 30px !important;
 }
 
-
-
+/* 
+.fixModal {
+	margin-bottom: 30px;
+} */
 
 
 
