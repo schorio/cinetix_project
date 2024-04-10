@@ -10,57 +10,34 @@
 {% endblock boutton_create %}
 
 {% block content %}
-<div class="row">
-    <div class="col-md-12">
-        <div class="table-responsive">
-            <!-- <table class="table table-striped custom-table datatable"> -->
-            <table class="table table-striped custom-table datatable" id="myTable">
-                <thead>
-                    <!-- <tr> -->
-                    <th>Film</th>
-                    <th>Genres</th>
-                    <th>Acteurs</th>
-                    <th>Trailer</th>
-                    <th>Commentaires</th>
-                    <th>synopsis</th>
-                    <th class="text-right no-sort">Action</th>
-                    <!-- </tr> -->
-                </thead>
-                <tbody>
-                {% csrf_token %}
-                {% for film in films %}
-                    <tr>
-                        <td>
-                            <h2 class="table-avatar">
-                                <a href="" class="avatar"><img alt="image" src="/{{film.posteur}}"></a>
-                                <a href="">{{ film.titre }}<span>{{ film.evaluation }}</span></a>
-                            </h2>
-                        </td>														
-                        <td>{{ film.genres }}</td>
-                        <td>{{ film.acteur }}</td>
-                        <td>{{ film.trailer }}</td>
-                        <td>{{ film.commentaires }}</td>
-                        <td>{{ film.synopsis }}</td>
-                        <td class="text-right">
-                            <div class="dropdown dropdown-action">
-                                <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
-                                <div class="dropdown-menu dropdown-menu-right">
-                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#film_update_{{ film.pk }}"><i class="fa fa-trash-o m-r-5"></i> Modifier</a>
-                                    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#film_delete_{{ film.pk }}"><i class="fa fa-trash-o m-r-5"></i> Supprimer</a>
-                                </div>
-                            </div>
-                        </td>
-                    </tr>
+<div class="row staff-grid-row">
+    {% csrf_token %}
+    {% for film in films %}
 
-                    {% include 'cinetix/film/film_update.html' %}
-                    {% include 'cinetix/film/film_delete.html' %}
-                        
-                {% endfor %}	
-                </tbody>
-
-            </table>
+        <div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
+            <div class="profile-widget">
+                <div class="profile-img">
+                    <a href="#"data-toggle="modal" data-target="#" class="avatar"><img src="/{{film.posteur}}" alt="image"></a>
+                </div>
+                    <div class="dropdown profile-action">
+                        <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#film_update_{{ film.pk }}"><i class="fa fa-pencil m-r-5"></i> Modifier</a>
+                            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#film_delete_{{ film.pk }}"><i class="fa fa-trash m-r-5"></i> Supprimer</a>
+                        </div>
+                    </div>
+                <div>
+                    <h4 class="user-name m-t-10 mb-0 text-ellipsis">{{ film.titre }}</h4>
+                    <h6 class="user-name text-muted">{{ film.genres }}</h6>
+                    <input data-role="rating" data-value="{{ film.evaluation }}">
+                </div>
+            </div>
         </div>
-    </div>
+
+        {% include 'cinetix/film/film_update.html' %}
+        {% include 'cinetix/film/film_delete.html' %}
+            
+    {% endfor %}	
 </div>
 {% endblock content %}
 
