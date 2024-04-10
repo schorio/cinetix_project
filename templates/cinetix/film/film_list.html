@@ -17,7 +17,7 @@
         <div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
             <div class="profile-widget">
                 <div class="profile-img">
-                    <a href="#"data-toggle="modal" data-target="#" class="avatar"><img src="/{{film.posteur}}" alt="image"></a>
+                    <a href="#"data-toggle="modal" data-target="#film_view_{{ film.pk }}" class="avatar"><img src="/{{film.posteur}}" alt="image"></a>
                 </div>
                     <div class="dropdown profile-action">
                         <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>
@@ -34,6 +34,7 @@
             </div>
         </div>
 
+        {% include 'cinetix/film/film_view.html' %}
         {% include 'cinetix/film/film_update.html' %}
         {% include 'cinetix/film/film_delete.html' %}
             
