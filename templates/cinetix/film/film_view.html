@@ -13,7 +13,13 @@
 					<img src="/{{ film.posteur }}"> 
 				</div>
                 <div class="col-12 col-lg-6 details">
-					<h2><a href=""><i class="fa fa-play-circle"></i></a>{{ film.titre }}</h2>
+					<h2>
+						<a href="#" class="video_btn">
+							<i class="fa fa-play-circle fa_btn"></i>
+							<input value="/{{ film.trailer }}" type="hidden">
+						</a>						
+						{{ film.titre }}
+					</h2>
 
 					<input data-role="rating" data-value="{{ film.evaluation }}">
 
