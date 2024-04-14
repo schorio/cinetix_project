@@ -40,6 +40,12 @@
             
     {% endfor %}	
 </div>
+<div class="container-v">
+    <div class="popup-video">
+        <span>&times;</span>
+        <video src="" muted autoplay controls></video>
+    </div>
+</div>
 {% endblock content %}
 
 
@@ -49,5 +55,19 @@
 
 
 {% block extrascript %}
+<script>
+    document.querySelectorAll('.video_btn').forEach(video_btn => {
+        const video = video_btn.querySelector('input');
+        const playButton = video_btn.querySelector('.fa_btn');
+    
+        playButton.addEventListener('click', () => {
+            document.querySelector('.popup-video').style.display = 'block';
+            document.querySelector('.popup-video video').src = video.getAttribute('value');
+        });
+    });
 
+    document.querySelector('.popup-video span').onclick = () => {
+        document.querySelector('.popup-video').style.display = 'none';
+    }
+</script>
 {% endblock extrascript %}
