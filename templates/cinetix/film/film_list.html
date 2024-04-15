@@ -61,12 +61,14 @@
         const playButton = video_btn.querySelector('.fa_btn');
     
         playButton.addEventListener('click', () => {
+            document.querySelector('.container-v').style.display = 'block';
             document.querySelector('.popup-video').style.display = 'block';
             document.querySelector('.popup-video video').src = video.getAttribute('value');
         });
     });
 
     document.querySelector('.popup-video span').onclick = () => {
+        document.querySelector('.container-v').style.display = 'block';
         document.querySelector('.popup-video').style.display = 'none';
     }
 </script>

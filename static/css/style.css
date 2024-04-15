@@ -7206,6 +7206,7 @@ ul.comment-list li ul.children {
     position: relative;
     min-height: 100vh;
     background: #334;
+	display: none;
 }
 
 .container-v .popup-video {
