@@ -7225,6 +7225,7 @@ ul.comment-list li ul.children {
     transform: translate(-50%, -50%);
     width: 1050px;
     object-fit: cover;
+	border-radius: 20px;
 }
 
 .container-v .popup-video span {
