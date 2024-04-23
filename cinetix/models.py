@@ -7,7 +7,7 @@ class Film(models.Model):
     acteur = models.CharField(max_length=255)
     synopsis = models.CharField(max_length=255)
     evaluation = models.FloatField()
-    trailer = models.CharField(max_length=255)
+    trailer = models.FileField(upload_to='static/video/trailer')
     posteur = models.ImageField(upload_to='static/img/film/')
     commentaires = models.CharField(max_length=255)
     
