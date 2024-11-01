@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 
 class Film(models.Model):
+    id_film = models.AutoField(primary_key=True)
     titre = models.CharField(max_length=255)
     genres = models.CharField(max_length=255)
     acteur = models.CharField(max_length=255)

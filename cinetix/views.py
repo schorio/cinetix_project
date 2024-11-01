@@ -31,6 +31,7 @@ class FilmCreateView(LoginRequiredMixin, CreateView):
 class FilmUpdateView(LoginRequiredMixin, UpdateView):
     login_url = 'login'
     model = Film
+    pk_url_kwarg = 'id_film'
     fields = ['titre', 'evaluation', 'genres', 'acteur', 'synopsis', 'trailer', 'posteur', 'commentaires']
     success_url = reverse_lazy('cinetix:film-list')
 
@@ -38,4 +39,5 @@ class FilmUpdateView(LoginRequiredMixin, UpdateView):
 class FilmDeleteView(LoginRequiredMixin, DeleteView):
     login_url = 'login'
     model =  Film
+    pk_url_kwarg = 'id_film'
     success_url = reverse_lazy('cinetix:film-list')
