@@ -1,4 +1,4 @@
-function MultiSelectTag(e, t = { shadow: !1, rounded: !0 }) {
+function MultiSelectTag(e, inputId, t = { shadow: !1, rounded: !0 }) {
   var n = null,
     l = null,
     a = null,
@@ -102,7 +102,7 @@ function MultiSelectTag(e, t = { shadow: !1, rounded: !0 }) {
       }
     }
     // Mettez à jour la valeur de l'input avec les valeurs sélectionnées
-    const selectedValuesInput = document.getElementById('genres');
+    const selectedValuesInput = document.getElementById(inputId); // Utiliser inputId ici
     selectedValuesInput.value = selected_values.map(item => item.value).join(', '); // Exemple de formatage
 
     e && t.hasOwnProperty("onChange") && t.onChange(selected_values);
