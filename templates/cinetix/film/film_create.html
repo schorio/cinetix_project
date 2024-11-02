@@ -14,7 +14,7 @@
 						<div class="col-sm-9">
 							<div class="form-group">
 								<label for="titre">Titre : </label>
-								<input type="text" class="form-control" name="titre">
+								<input type="text" class="form-control" name="titre" id="titre">
 							</div>
 						</div>
                         <div class="col-sm-3">
@@ -28,7 +28,7 @@
 								<label for="genres">Genres : </label>
 								<input type="hidden" name="genres" id="genres">
 								<select name="gg" id="gg" multiple class="form-control">
-									<option value="action" selected>Action</option>
+									<option value="action">Action</option>
 									<option value="drama">Drama</option>
 									<option value="comedy">Comedy</option>
 									<option value="thriller">Thriller</option>
@@ -39,13 +39,19 @@
 						<div class="col-sm-6">
 							<div class="form-group">
 								<label for="acteur">Acteur :</label>
-								<input type="text" class="form-control" name="acteur" value="0">
+								<input type="hidden" name="acteur" id="acteur">
+								<select name="aa" id="aa" multiple class="form-control">
+									<option value="Jason Statham">Jason Statham</option>
+									<option value="Tom Holland">Tom Holland</option>
+									<option value="Gal Gadot">Gal Gadot</option>
+									<option value="Tony jah">Tony jah</option>
+								</select>
 							</div>
 						</div>
 						<div class="col-sm-12">
 							<div class="form-group">
 								<label for="synopsis">Synopsis : </label>
-								<input type="text" class="form-control" name="synopsis">
+								<input type="text" class="form-control" name="synopsis" id="synopsis">
 							</div>
 						</div>
 						<div class="col-sm-6">
