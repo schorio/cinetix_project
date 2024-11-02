@@ -6,22 +6,12 @@ class Film(models.Model):
     id_film = models.AutoField(primary_key=True)
     titre = models.CharField(max_length=255)
     genres = models.CharField(max_length=255)
-    acteur = ArrayField(
-        models.CharField(max_length=75),
-        size=5,  # Taille maximale du tableau
-        blank=True,
-        default=list,  # Valeur par défaut pour le champ
-    )
+    acteur = models.CharField(max_length=255)
     synopsis = models.CharField(max_length=255)
     evaluation = models.FloatField()
     trailer = models.FileField(upload_to='static/video/trailer')
     posteur = models.ImageField(upload_to='static/img/film/')
-    commentaires = ArrayField(
-        models.CharField(max_length=255),
-        size=100,  # Taille maximale du tableau
-        blank=True,
-        default=list,  # Valeur par défaut pour le champ
-    )
+    commentaires = models.CharField(max_length=255)
     
     def __str__(self):
         return self.titre
