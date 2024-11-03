@@ -28,7 +28,7 @@
                     </div>
                 <div>
                     <h4 class="user-name m-t-10 mb-0 text-ellipsis">{{ film.titre }}</h4>
-                    <h6 class="user-name text-muted">{{ film.genres }}</h6>
+                    <h6 class="user-name text-muted">{{ film.genres|join:', ' }}</h6>
                     <input data-role="rating" data-value="{{ film.evaluation }}">
                 </div>
             </div>

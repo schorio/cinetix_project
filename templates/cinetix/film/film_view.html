@@ -24,7 +24,7 @@
 					<input data-role="rating" data-value="{{ film.evaluation }}">
 
 					<br>
-						<span class="text-muted">{{ film.genres }}</span>
+						<span class="text-muted">{{ film.genres|join:', ' }}</span>
 					<br>
 						<span class="text-xs">{{ film.acteur }}</span>
 					<br><br>
