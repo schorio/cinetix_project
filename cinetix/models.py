@@ -5,7 +5,12 @@ from django.contrib.postgres.fields import ArrayField
 class Film(models.Model):
     id_film = models.AutoField(primary_key=True)
     titre = models.CharField(max_length=255)
-    genres = models.CharField(max_length=255)
+    genres = ArrayField(
+        models.CharField(max_length=50),
+        size=3,
+        blank=True,
+        default=list,
+    )
     acteur = models.CharField(max_length=255)
     synopsis = models.CharField(max_length=255)
     evaluation = models.FloatField()
