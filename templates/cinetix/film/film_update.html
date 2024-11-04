@@ -26,13 +26,26 @@
 						<div class="col-sm-6">
 							<div class="form-group">
 								<label for="genres">Genres : </label>
-								<input type="text" class="form-control" name="genres" value="{{ film.genres }}">
+								<input type="hidden" name="genres" id="n_genres" value="{{ film.genres }}">
+								<select name="n_gg" id="n_gg" multiple class="form-control">
+									<option value="action">Action</option>
+									<option value="drama">Drama</option>
+									<option value="comedy">Comedy</option>
+									<option value="thriller">Thriller</option>
+									<option value="horror">Horror</option>
+								</select>
 							</div>
 						</div>
 						<div class="col-sm-6">
 							<div class="form-group">
 								<label for="acteur">Acteur :</label>
-								<input type="text" class="form-control" name="acteur" value="{{ film.acteur }}">
+								<input type="hidden" name="acteur" id="n_acteur" value="{{ film.acteur }}">
+								<select name="n_aa" id="n_aa" multiple class="form-control">
+									<option value="Jason Statham">Jason Statham</option>
+									<option value="Tom Holland">Tom Holland</option>
+									<option value="Gal Gadot">Gal Gadot</option>
+									<option value="Tony jah">Tony jah</option>
+								</select>
 							</div>
 						</div>
 						<div class="col-sm-12">
@@ -50,7 +63,7 @@
 						<div class="col-sm-6">
 							<div class="form-group">
 								<label for="posteur">Posteur : </label>
-								<input type="file" class="form-control" name="posteur">
+								<input type="file" class="form-control" name="posteur" value="{{ film.posteur }}">
 							</div>
 						</div>
 						<div class="col-sm-12">
