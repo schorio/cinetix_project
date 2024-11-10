@@ -1,0 +1,59 @@
+<div id="proj_create" class="modal custom-modal fade" role="dialog">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Nouveau Projection</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form action="{% url 'cinetix:projection-create' %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<label for="{{ form.film.id_for_label }}">Film : </label>
+								{{ form.film }}
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="{{ form.type_proj.id_for_label }}">Type de projection : </label>
+								{{ form.type_proj }}
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="form-group">
+								<label for="{{ form.date.id_for_label }}">Date : </label>
+								{{ form.date }}
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="form-group">
+								<label for="{{ form.heure.id_for_label }}">Heure : </label>
+								{{ form.heure }}
+							</div>
+						</div>
+						<div class="col-sm-9">
+							<div class="form-group">
+								<label for="{{ form.description.id_for_label }}">Description : </label>
+								{{ form.description }}
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="form-group">
+								<label for="{{ form.paf.id_for_label }}">PAF : </label>
+								{{ form.paf }}
+							</div>
+						</div>
+					</div>
+				
+					<div class="submit-section">
+						<button type="submit" class="btn btn-primary submit-btn">Valider</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
