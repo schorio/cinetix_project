@@ -17,14 +17,15 @@
                 <thead>
                     <!-- <tr> -->
                     <th>Film</th>
-                    <th>Evaluation</th>
-                    <th>Date</th>
-                    <th>Place</th>
-                    <th>Prix d'entrer</th>
+                    <th>Date et heure</th>
+                    <th>PAF</th>
+                    <th>Place réserver</th>
+                    <th>Place dispo</th>
                     <th class="text-right no-sort">Action</th>
                     <!-- </tr> -->
                 </thead>
                 <tbody>
+                {% load custom_filters %}
                 {% csrf_token %}
                 {% for proj in projection %}
                 
@@ -35,10 +36,10 @@
                                 <a href=" " data-toggle="modal" data-target="#film_view_{{ proj.film.pk }}"> {{ proj.film.titre }} <span> {{ proj.film.genres }} </span></a>
                             </h2>
                         </td>														
-                        <td> {{ proj.film.evaluation }} étoiles </td>
-                        <td> {{ proj.timings }} </td>
-                        <td> {{ proj.place_proj }} </td>
-                        <td> {{ proj.paf }} </td>
+                        <td> {{ proj.date_proj }} à {{ proj.heure_proj }} </td>
+                        <td> {{ proj.paf_proj }} Ar</td>
+                        <td> {{ proj.place_proj|length }} place(s) </td>
+                        <td> {{ proj.place_proj|length|subtract:92 }} place(s) </td>
                         <td class="text-right">
                             <div class="dropdown dropdown-action">
                                 <a href="#" class="action-icon dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i class="material-icons">more_vert</i></a>

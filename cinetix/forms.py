@@ -17,10 +17,12 @@ class ProjectionForm(forms.ModelForm):
     )
     class Meta:
         model = Projection
-        fields = ['film', 'type_proj', 'date', 'heure', 'description', 'paf']
+        fields = ['film', 'type_proj', 'date_proj', 'heure_proj', 'paf_proj', 'desc_proj',  'place_proj']
         widgets = {
-            'date': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
-            'heure': forms.TextInput(attrs={'class': 'form-control'}),
-            'description': forms.TextInput(attrs={'class': 'form-control'}),
-            'paf': forms.TextInput(attrs={'class': 'form-control'}),
+            'date_proj': forms.DateInput(attrs={'type': 'date', 'class': 'form-control'}),
+            'heure_proj': forms.TextInput(attrs={'class': 'form-control'}),
+            'paf_proj': forms.TextInput(attrs={'class': 'form-control'}),
+            'desc_proj': forms.TextInput(attrs={'class': 'form-control'}),
+            'paf_proj': forms.TextInput(attrs={'class': 'form-control'}),
+            'place_proj': forms.TextInput(attrs={'class': 'form-control'}),
         }
