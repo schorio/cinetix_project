@@ -29,16 +29,15 @@ class Film(models.Model):
 class Projection(models.Model):
     id_proj = models.AutoField(primary_key=True)
     film = models.ForeignKey(Film, on_delete=models.CASCADE, related_name="projections")
-    type_proj = models.CharField(max_length=255)
-    timings = models.CharField(max_length=255)
-    place_proj = ArrayField(
-        models.CharField(max_length=5),
-        size=92,  # Taille maximale du tableau
-        blank=True,
-        default=list,  # Valeur par défaut pour le champ
-    )
+    type_proj = models.CharField(max_length=20, choices=[
+        ('FC', 'Film Complet'),
+        ('FAP', 'Avant-Première'),
+        ('FP', 'Prochainement'),
+    ])
+    date = models.CharField(max_length=255)
+    heure = models.CharField(max_length=255)
     paf = models.FloatField()
     description = models.CharField(max_length=255)
     
     def __str__(self):
-        return self.film
+        return self.film.titre
