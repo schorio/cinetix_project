@@ -34,10 +34,17 @@ class Projection(models.Model):
         ('FAP', 'Avant-Première'),
         ('FP', 'Prochainement'),
     ])
-    date = models.CharField(max_length=255)
-    heure = models.CharField(max_length=255)
-    paf = models.FloatField()
-    description = models.CharField(max_length=255)
+    date_proj = models.CharField(max_length=255)
+    heure_proj = models.CharField(max_length=255)
+    paf_proj = models.FloatField()
+    desc_proj = models.CharField(max_length=255)
+    place_proj = ArrayField(
+        models.CharField(max_length=10),
+        size=92,
+        blank=True,
+        default=list,
+    )
+    
     
     def __str__(self):
         return self.film.titre
